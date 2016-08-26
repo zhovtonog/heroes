@@ -13694,7 +13694,7 @@ function uo(a) {
   a = fh ? fh(null) : eh.call(null, null);
   var b = fh ? fh(0) : eh.call(null, 0), b = window.setInterval(function(a, b, e, g) {
     return function() {
-      return 5 < (M.g ? M.g(e) : M.call(null, e)) ? window.clearInterval(M.g ? M.g(b) : M.call(null, b)) : xn(localStorage.getItem("captchID"), g);
+      return 30 < (M.g ? M.g(e) : M.call(null, e)) ? (window.clearInterval(M.g ? M.g(b) : M.call(null, b)), localStorage.setItem("captchCode", ""), location.href = "" + A("http://www.heroeswm.ru/home.php")) : xn(localStorage.getItem("captchID"), g);
     };
   }(a, a, b, function(a) {
     return function(b) {

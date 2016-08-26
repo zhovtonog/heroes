@@ -59,8 +59,11 @@
       (reset! interval (.setInterval
                     js/window
                     (fn []
-                      (if (> @cnt 5)
-                        (.clearInterval js/window @interval)
+                      (if (> @cnt 30)
+                        (do
+                          (.clearInterval js/window @interval)
+                          (.setItem js/localStorage "captchCode" "")
+                          (aset js/location "href" (str "http://www.heroeswm.ru/home.php")))
                         (do
                           (getCaptcha (.getItem js/localStorage "captchID") getCatchHendler))
                       )) 20000)))
