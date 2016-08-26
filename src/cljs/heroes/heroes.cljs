@@ -74,13 +74,7 @@
                   (do (l "dont work")
                      (set! (.-pathname js/location) "/map.php"))
                   (do
-                    ;(js/setTimeout (aset js/location "href" (str "http://www.heroeswm.ru/home.php")) 12000)
-                    (.setTimeout js/window #(aset js/location "href" (str "http://www.heroeswm.ru/home.php")) 1200000)
-                    )
-
-                    )
-
-    )))
+                    (.setTimeout js/window #(aset js/location "href" (str "http://www.heroeswm.ru/home.php")) 1200000))))))
 
 (defn mapPageHandler []
   (if (= (.-pathname js/location) "/map.php")
@@ -100,15 +94,7 @@
                                               "&code=" (.getItem js/localStorage "captchCode")
                                               "&code_id=" (.get goog.net.cookies "l_obj_c")
                                               "&pl_id=" (.get goog.net.cookies "pl_id")
-                                              "&rand1=0.89307010267&rand2=0.668795076664537"))
-          ;http://www.heroeswm.ru/object_do.php?id=49&code=G4M4UP&code_id=f0f0cac3c51144be8dacc474c83053e5&pl_id=538718&rand1=0.89307010267&rand2=0.668795076664537
-
-        )
-
-
-
-
-      ))))
+                                              "&rand1=0.89307010267&rand2=0.668795076664537")))))))
 
 
 (defn objInfoHandler []
