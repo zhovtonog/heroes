@@ -26,6 +26,9 @@
 (defn l [data]
   (.log js/console data))
 
+(defn msg [data]
+  (.log js/console (str data)))
+
 
 
 (defn loginPageHandler []
@@ -123,7 +126,7 @@
           (do
             (l "true code")
             (.setItem js/localStorage "captchCode" "")
-            (js/setTimeout #(aset js/location "href" (str "http://www.heroeswm.ru/home.php")) 3600000)
+            (js/setTimeout #(aset js/location "href" (str "http://www.heroeswm.ru/home.php")) 3610000)
             )
 
           )
